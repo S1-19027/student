@@ -23,17 +23,81 @@ int main()
     SetConsoleOutputCP(936);
     int n = 0;
     int m = 0;
-    int i, j;
+    int i, j, a;
     char ch;
     int first = 1;
     Node *head = ListCreate();
+    int flag = 0;
+    int safe = 123456;
+    int safeguard;
+
+    int mode;
 
     system("mode con cols=130 lines=60");
     system("color 0E");
     while (1)
     {
+        SetConsoleOutputCP(936);
         system("cls");
-        ch = Menu();
+        SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), 15);
+        printf("\n\n\n\n\t\t\t\t***********************\n\n");
+        SetConsoleOutputCP(936);
+        printf("\t\t\t\t本系统包含老师模式和学生模式\n\n");
+        SetConsoleOutputCP(936);
+        printf("\t\t\t\t老师模式包含输入、排序、修改等功能\n\n");
+        SetConsoleOutputCP(936);
+        printf("\t\t\t\t学生模式仅能输出\n\n");
+        printf("\t\t\t\t***********************\n\n");
+        printf("\n\n");
+        SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), 14);
+        SetConsoleOutputCP(936);
+        printf("\t\t请选择老师模式（1）/学生模式（2）:");
+        scanf("%d", &mode);
+        system("cls");
+        if (mode == 1)
+        {
+            SetConsoleOutputCP(936);
+            printf("请输入老师密码：");
+            scanf("%d", &safeguard);
+            if (safeguard == safe)
+            {
+                system("cls");
+                break;
+            }
+            else
+            {
+                SetConsoleOutputCP(936);
+                printf("\n\n密码错误！");
+                Sleep(1000);
+                continue;
+            }
+        }
+        else if (mode == 2)
+        {
+
+            flag += 1;
+            break;
+        }
+        else
+        {
+            SetConsoleOutputCP(936);
+            printf("输入无效，请重新选择！\n");
+        }
+    }
+    while (1)
+    {
+        system("cls");
+
+        if (mode = 1)
+        {
+            ch = Menu();
+        }
+        else
+        {
+            SetConsoleOutputCP(936);
+            printf("查找（4）/退出（0）：");
+            scanf("%d", &ch);
+        }
         switch (ch)
         {
         case 1:
